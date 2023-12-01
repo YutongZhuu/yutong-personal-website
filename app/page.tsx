@@ -66,12 +66,13 @@ export default function Home() {
               id="panel1a-header"
               style={{ borderBottom: '1px solid #ddd', marginBottom: -1 }}
             >
-              <Typography className='text-xl lg:text-2xl'>
-                  Software Developer Intern
+              <Typography>
+                  <span className='text-xl lg:text-2xl'>Software Developer Intern</span>
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography className='w-full px-2'>
+              <Typography className=''>
+                <span className='w-full px-2 block'>
                   <span className='text-md my-2 block lg:text-lg'>
                     AUAV Tech Inc. - Calgary, AB
                   </span>
@@ -81,6 +82,7 @@ export default function Home() {
                   <span className='text-sm block lg:text-base'>
                     Led the development of an interactive exam preparation platform using <strong>React</strong>, <strong>Node.js</strong>, and <strong>AWS</strong>, enhancing user experience and security, and streamlined the deployment process.
                   </span>
+                </span>
               </Typography>
             </AccordionDetails>
           </Accordion>
