@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { AOSInit } from './components/AOS'
+import { AOSInit } from './components/aos'
 const inter = Inter({ subsets: ['latin'] })
 import Nav from './components/Nav';
 import { Suspense } from 'react'
