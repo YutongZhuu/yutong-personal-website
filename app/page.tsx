@@ -32,15 +32,12 @@ const ProjectInfos: ProjectInfo[] = [
     link2: "https://github.com/YutongZhuu/E-Commerse-Web"
   }
 ];
-export const metadata: Metadata = {
-  title: "YutongZ",
-  description:"Yutong Zhu's Personal Website"
-}
+
 
 export default function Home() {
   return (
     <div>
-      <main className="font-heading bg-background">
+      <main className="font-heading bg-background overflow-hidden">
         <div className='h-screen bg-secondary'>
           <div className='h-full text-center flex md:flex-row-reverse flex-col md:flex-row w-full justify-around items-center bg-background arc-background lg:px-5'>
             <div className='' data-aos="fade-left">

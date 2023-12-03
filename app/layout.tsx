@@ -1,22 +1,16 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { AOSInit } from './components/aos'
+import { AOSInit } from './components/AOS'
 const inter = Inter({ subsets: ['latin'] })
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import Nav from './components/Nav';
+import { Suspense } from 'react'
+import Loading from './loading'
+
+export const metadata: Metadata = {
+  title: "YutongZ",
+  description:"Yutong Zhu's Personal Website"
+}
 
 export default function RootLayout({
   children,
@@ -25,9 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <AOSInit/>
-      
-      <body className={inter.className}>{children}</body>
+      <AOSInit />
+      <body>
+        <Nav />
+        <Suspense fallback={<Loading/>}>
+          <main className={inter.className}>{children}</main>
+        </Suspense>
+      </body>
     </html>
   )
 }
