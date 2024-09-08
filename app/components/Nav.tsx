@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { AppBar, Toolbar, Typography, Button, useMediaQuery, IconButton, Drawer, List, ListItem, ListItemText, Paper } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
-const navButtons = [{ text: "Home", url:"/" }, { text: "About Me", url:"/about" }, { text: "Contact Me", url:"/contact" }];
+const navButtons = [{ text: "Home", url:"/" }];
 const Nav: React.FC = () => {
     const isMobile = useMediaQuery('(max-width:600px)');
     const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -59,8 +59,8 @@ const Nav: React.FC = () => {
                     </>
                 ) : (
                     navButtons.map((navButton, index) => (
-                        <Link href={navButton.url}>
-                            <Button key={index} style={{ color: "black" }}>
+                        <Link href={navButton.url} key={index}>
+                            <Button style={{ color: "black" }}>
                                 {navButton.text}
                             </Button>
                         </Link>

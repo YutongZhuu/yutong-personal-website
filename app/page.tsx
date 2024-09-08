@@ -5,27 +5,27 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import type { Metadata } from 'next';
 import { ProjectInfo } from './utilities/types';
 import ProjectCard from './components/ProjectCard';
+import Link from 'next/link';
 const ProjectInfos: ProjectInfo[] = [
   {
     imageUri: "/HealthMate.png",
-    techStacks:["Next.js", "Tensorflow.js, infobip"],
+    techStacks: ["Next.js", "Tensorflow.js, infobip"],
     title: "Health Mate (Submitted to Hack Western)",
     content: "Health Mate is an AI-powered digital health assistant designed to enhance well-being in digital workspaces. It features AI-driven posture detection, screen time management, and distance monitoring to mitigate eye strain and encourage healthy habits. Built with Next.js and Tensorflow.js, it integrates real-time AI monitoring directly into the user interface.",
     link1: "https://hack-western-x.vercel.app/",
     link2: "https://github.com/HikaruSadashi/HealthMate"
   }, {
     imageUri: "/CleverComrade.png",
-    techStacks:["React", "Node.js", "Express", "Auth0"],
+    techStacks: ["React", "Node.js", "Express", "Auth0"],
     title: "Clever Comrade (Submitted to NewHacks)",
     content: "CleverComrade is an AI digital assistant tailored for academic inquiries. It delivers precise answers from course materials in a user's Microsoft OneDrive, ensuring security through Auth0. Primarily sourcing information from these documents, it minimizes inaccuracies. Notably, it cites its sources for transparency. This assistant is integrated into a web application developed using React, HTML5, and Tailwind CSS.",
     link1: "",
     link2: "https://github.com/KrinsKumar/CleverComrade/tree/master"
-  },{
+  }, {
     imageUri: "/ECommerseWebsite.png",
-    techStacks:["React", "React-Redux", "Firebase"],
+    techStacks: ["React", "React-Redux", "Firebase"],
     title: "E Commerse Website",
     content: "A simple online shopping website that I built using tools like React and Firebase. It has cool features like signing in, looking at products, adding them to your cart. You can see it in action at Famous Mooncake E-Commerce. I made this to show off my skills in building websites that are easy and fun to use.",
     link1: "https://famous-mooncake-513849.netlify.app/",
@@ -54,18 +54,19 @@ export default function Home() {
                 <br />
               </h1>
               <div className='mt-10 lg:text-lg text-sm ' data-aos="fade-right">
-                I'm a <strong>software developer</strong> based in Waterloo, Canada. <br />
-                I'm currently studying <strong>Computer Engineering</strong> at the University of Waterloo. <br />
-                I'm constantly seeking new and exciting experiences in the realm of software development.<br />
+                Computer Engineering student at <strong>the University of Waterloo.</strong>
               </div>
               <div className='flex lg:w-1/2 lg:flex-row justify-evenly lg:ml-10 mt-10'>
-                <button  className='bg-secondary px-5 py-3 text-sm relative hover:-translate-y-1 ease-in duration-300 rounded'>More About Me</button>
-                <button  className='bg-primary px-5 py-3 text-sm relative hover:-translate-y-1 ease-in duration-300 rounded hover:shadow-primary hover:shadow-lg '>Contact Me</button>
+                <Link href='./MyResume.pdf' target='_blank'>
+                  <button className='bg-secondary px-5 py-3 text-sm relative hover:-translate-y-1 ease-in duration-300 rounded'>View My Resume</button>
+                </Link>
+                <a href='mailto:y25zhu@outlook.com'>
+                  <button className='bg-primary px-5 py-3 text-sm relative hover:-translate-y-1 ease-in duration-300 rounded hover:shadow-primary hover:shadow-lg '>Email Me</button>
+                </a>
               </div>
             </div>
           </div>
         </div>
-
 
         <div className='bg-secondary flex flex-col px-10 justify-arround py-5 lg:flex-row pt-5 lg:pt-20 pb-10'>
           <h2 className='text-3xl lg:text-5xl w-1/3 flex mb-8 lg:justify-center' data-aos="fade-right">
@@ -73,12 +74,16 @@ export default function Home() {
           </h2>
           <ul className='text-sm leading-6 lg:text-lg lg:w-1/2' data-aos="fade-left">
             <li className='mb-2'>
+              <span className='font-bold'>Programming Languages</span>:
+              <span className='underline decoration-2 decoration-accent'> JavaScript</span>
+              /TypeScript, SQL, C/C++, Python</li>
+            <li className='mb-2'>
               <span className='font-bold'>Web Development</span>:
-              <span className='underline decoration-2 decoration-accent'>JavaScript</span>
-              /TypeScript,
-              HTML/CSS, <span className='underline decoration-2 decoration-accent'>React</span>, Next.js, Node.js,  <span className='underline decoration-2 decoration-accent'>Express</span>, <span className='underline decoration-2 decoration-accent'>Tailwind CSS</span>, SASS, Firebase, SQL, MySQL</li>
-            <li className='mb-2'><span className='font-bold'>DevOps</span>: AWS, <span className='underline decoration-2 decoration-accent'>Git</span>, GitHub, Microsoft Azure</li>
-            <li><span className='font-bold'>Others</span>: C++, C#, Unity, VHDL, tensorflow.js</li>
+              <span className='underline decoration-2 decoration-accent'>React</span>, Next.js, Node.js, Express.js, Flask, MySQL, HTML5, CSS3, Tailwind CSS, Bootstrap, Material-UI</li>
+            <li className='mb-2'>
+              <span className='font-bold'>DevOps/Test</span>:
+              AWS, Google Cloud Platform, Firebase, Git, Github, Gitlab, <span className='underline decoration-2 decoration-accent'>Cypress</span>, Selenium, Jest
+            </li>
           </ul>
         </div>
 
@@ -97,7 +102,35 @@ export default function Home() {
                 style={{ borderBottom: '1px solid #ddd', marginBottom: -1 }}
               >
                 <Typography>
-                  <span className='text-xl lg:text-2xl'>Software Developer Intern</span>
+                  <span className='text-xl lg:text-2xl'>Test Automation Developer Co-op</span>
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography className=''>
+                  <span className='w-full px-2 block'>
+                    <span className='text-md my-2 block lg:text-lg'>
+                      Tangam Systems - Waterloo, ON
+                    </span>
+                    <span className='text-sm my-2 block lg:text-base'>
+                      Sept 2024 - Aug 2024
+                    </span>
+                    <span className='text-sm block lg:text-base'>
+                      Developed and maintained a automatin test suite using <strong>Cypress</strong> with <strong>JavaScript</strong> with <strong>SQL</strong> queries to ensure the quality of a full-stack web application.
+                    </span>
+                  </span>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+
+            <Accordion style={{ background: 'transparent', boxShadow: 'none' }} defaultExpanded>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                style={{ borderBottom: '1px solid #ddd', marginBottom: -1 }}
+              >
+                <Typography>
+                  <span className='text-xl lg:text-2xl'>Software Developer Co-op</span>
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
@@ -107,7 +140,7 @@ export default function Home() {
                       AUAV Tech Inc. - Calgary, AB
                     </span>
                     <span className='text-sm my-2 block lg:text-base'>
-                      Sept/2023 - Present
+                      Sept 2023 - Dec 2023
                     </span>
                     <span className='text-sm block lg:text-base'>
                       Led the development of an interactive exam preparation platform using <strong>React</strong>, <strong>Node.js</strong>, and <strong>AWS</strong>, enhancing user experience and security, and streamlined the deployment process.
@@ -125,13 +158,12 @@ export default function Home() {
           <div className=''></div>
           <div className='grid lg:grid-cols-3 gap-x-10 px-10 md:grid-cols-2 grid-cols-1 gap-y-5'>
             {
-              ProjectInfos.map((projectInfo) => <ProjectCard {...projectInfo} />)
+              ProjectInfos.map((projectInfo) => <ProjectCard {...projectInfo} key={projectInfo.title} />)
             }
           </div>
-          <div/>
+          <div />
         </div>
       </main>
-
     </div>
   )
 }
