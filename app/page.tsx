@@ -1,40 +1,63 @@
 import Image from 'next/image'
 import './globals.css'
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExperienceItem from './components/ExperienceItem';
 import { ProjectInfo } from './utilities/types';
 import ProjectCard from './components/ProjectCard';
 import Link from 'next/link';
 const ProjectInfos: ProjectInfo[] = [
   {
-    imageUri: "/HealthMate.png",
-    techStacks: ["Next.js", "Tensorflow.js, infobip"],
-    title: "Health Mate (Submitted to Hack Western)",
-    content: "Health Mate is an AI-powered digital health assistant designed to enhance well-being in digital workspaces. It features AI-driven posture detection, screen time management, and distance monitoring to mitigate eye strain and encourage healthy habits. Built with Next.js and Tensorflow.js, it integrates real-time AI monitoring directly into the user interface.",
-    link1: "https://hack-western-x.vercel.app/",
-    link2: "https://github.com/HikaruSadashi/HealthMate"
-  }, {
-    imageUri: "/CleverComrade.png",
-    techStacks: ["React", "Node.js", "Express", "Auth0"],
-    title: "Clever Comrade (Submitted to NewHacks)",
-    content: "CleverComrade is an AI digital assistant tailored for academic inquiries. It delivers precise answers from course materials in a user's Microsoft OneDrive, ensuring security through Auth0. Primarily sourcing information from these documents, it minimizes inaccuracies. Notably, it cites its sources for transparency. This assistant is integrated into a web application developed using React, HTML5, and Tailwind CSS.",
+    imageUri: "/LLVMWyvernSmall.png",
+    techStacks: ["C++", "LLVM"],
+    title: "LLVM Contributions",
+    content: "Contributed to Clang frontend by enhancing the Diagnostic Module.",
     link1: "",
-    link2: "https://github.com/KrinsKumar/CleverComrade/tree/master"
-  }, {
-    imageUri: "/ECommerseWebsite.png",
-    techStacks: ["React", "React-Redux", "Firebase"],
-    title: "E Commerse Website",
-    content: "A simple online shopping website that I built using tools like React and Firebase. It has cool features like signing in, looking at products, adding them to your cart. You can see it in action at Famous Mooncake E-Commerce. I made this to show off my skills in building websites that are easy and fun to use.",
-    link1: "https://famous-mooncake-513849.netlify.app/",
-    link2: "https://github.com/YutongZhuu/E-Commerse-Web"
+    link2: "https://github.com/llvm/llvm-project/pulls?q=is%3Amerged+is%3Apr+author%3AYutongZhuu+"
   }
 ];
 
 
 export default function Home() {
+  type Experience = {
+    title: string;
+    company: string;
+    dateRange: string;
+    description: string;
+    defaultExpanded?: boolean;
+  }
+
+  const Experiences: Experience[] = [
+    {
+      title: 'Incoming Software Engineering Intern',
+      company: "Snowflake - Menlo Park, CA",
+      dateRange: 'Jan 2026 - Apr 2026',
+      description: 'Will be working on database query engine',
+    },
+    {
+      title: 'Undergraduate Research Assistant',
+      company: 'University of Waterloo - Waterloo, ON',
+      dateRange: 'Aug 2025 - Present',
+      description: 'Assisted in research on Java type systems, supervised by Prof. Werner Dietl.',
+    },
+    {
+      title: 'Compiler Software Engineering Intern',
+      company: 'Huawei Canada - Markham, ON',
+      dateRange: 'Jan 2025 - April 2025',
+      description: 'Contributed to compiler optimization and profiling for HarmonyOS in the Mobile CPU team.'
+    },
+    {
+      title: 'Test Automation Developer Intern',
+      company: 'Tangam Systems - Waterloo, ON',
+      dateRange: 'Sept 2024 - Aug 2024',
+      description: 'Developed and maintained a automatin test suite using <strong>Cypress</strong> with <strong>JavaScript</strong> with <strong>SQL</strong> queries to ensure the quality of a full-stack web application.',
+    },
+    {
+      title: 'Software Developer Intern',
+      company: 'AUAV Tech Inc. - Calgary, AB',
+      dateRange: 'Sept 2023 - Dec 2023',
+      description: 'Led the development of an interactive exam preparation platform using <strong>React</strong>, <strong>Node.js</strong>, and <strong>AWS</strong>, enhancing user experience and security, and streamlined the deployment process.',
+    }
+  ];
+
   return (
     <div>
       <main className="font-heading bg-background overflow-hidden">
@@ -94,61 +117,9 @@ export default function Home() {
             experiences
           </h2>
           <div className='lg:w-3/5' data-aos="fade-left">
-            <Accordion style={{ background: 'transparent', boxShadow: 'none' }} defaultExpanded>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-                style={{ borderBottom: '1px solid #ddd', marginBottom: -1 }}
-              >
-                <Typography>
-                  <span className='text-xl lg:text-2xl'>Test Automation Developer Co-op</span>
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography className=''>
-                  <span className='w-full px-2 block'>
-                    <span className='text-md my-2 block lg:text-lg'>
-                      Tangam Systems - Waterloo, ON
-                    </span>
-                    <span className='text-sm my-2 block lg:text-base'>
-                      Sept 2024 - Aug 2024
-                    </span>
-                    <span className='text-sm block lg:text-base'>
-                      Developed and maintained a automatin test suite using <strong>Cypress</strong> with <strong>JavaScript</strong> with <strong>SQL</strong> queries to ensure the quality of a full-stack web application.
-                    </span>
-                  </span>
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-
-            <Accordion style={{ background: 'transparent', boxShadow: 'none' }} defaultExpanded>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-                style={{ borderBottom: '1px solid #ddd', marginBottom: -1 }}
-              >
-                <Typography>
-                  <span className='text-xl lg:text-2xl'>Software Developer Co-op</span>
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography className=''>
-                  <span className='w-full px-2 block'>
-                    <span className='text-md my-2 block lg:text-lg'>
-                      AUAV Tech Inc. - Calgary, AB
-                    </span>
-                    <span className='text-sm my-2 block lg:text-base'>
-                      Sept 2023 - Dec 2023
-                    </span>
-                    <span className='text-sm block lg:text-base'>
-                      Led the development of an interactive exam preparation platform using <strong>React</strong>, <strong>Node.js</strong>, and <strong>AWS</strong>, enhancing user experience and security, and streamlined the deployment process.
-                    </span>
-                  </span>
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
+            {Experiences.map(exp => (
+              <ExperienceItem key={exp.title} {...exp} />
+            ))}
           </div>
         </div>
         <div className='py-10 px-3 border-b-2 border-dashed border-slate-300 dashed-border'>
